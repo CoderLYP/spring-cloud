@@ -1,0 +1,23 @@
+server:
+  port: 3344
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#file:/C:/Users/louis/AppData/Local/Temp/config-repo-7155234350334197477/config-prod.yml
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          #uri: git@github.com:CoderLYP/springcloud-config.git
+          uri: https://github.com/CoderLYP/springcloud-config.git
+          search-paths:
+            - springcloud-config
+          username: CoderLYP
+          password: Gitlyp1124
+          skip-ssl-validation: true
+      label: master
